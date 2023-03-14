@@ -1,2 +1,2 @@
 #!/bin/bash
-grep -Eo '^[^:]+' /etc/passwd | sort | while read user; do echo "${user}:$(grep "^${user}:" /etc/passwd | cut -d ':' -f6)"; done
+cut -d":" --fields=1,6 /etc/passwd | sort
